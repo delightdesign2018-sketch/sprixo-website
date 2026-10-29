@@ -1,0 +1,74 @@
+/* Standalone so the preloader can paint before the application module loads. */
+.sprixo-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: #f7f7f2;
+  color: #20211e;
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+.sprixo-preloader.is-leaving { opacity: 0; }
+
+.sprixo-preloader__content {
+  width: min(260px, 100%);
+  text-align: center;
+}
+
+.sprixo-preloader__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  animation: sprixo-logo-enter 600ms cubic-bezier(.23, 1, .32, 1) both;
+}
+
+.sprixo-preloader__line {
+  position: relative;
+  width: 70%;
+  height: 2px;
+  margin: 28px auto 20px;
+  overflow: hidden;
+  background: #d2f85a33;
+}
+
+.sprixo-preloader__line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #d2f85a;
+  transform-origin: left;
+  animation: sprixo-loading-line 1400ms cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.sprixo-preloader__text {
+  margin: 0;
+  font: 500 11px/1.6 Manrope, Arial, sans-serif;
+  letter-spacing: .22em;
+}
+
+@keyframes sprixo-logo-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sprixo-loading-line {
+  0% { transform: translateX(-100%) scaleX(.35); }
+  50% { transform: translateX(20%) scaleX(.65); }
+  100% { transform: translateX(100%) scaleX(.35); }
+}
+
+@media (max-width: 650px) {
+  .sprixo-preloader__content { width: min(220px, 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprixo-preloader { transition: none; }
+  .sprixo-preloader__logo,
+  .sprixo-preloader__line::after { animation: none; }
+  .sprixo-preloader__line::after { transform: none; }
+}

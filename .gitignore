@@ -1,0 +1,23 @@
+
+# Screenshot folders
+screenshots/
+**/screenshots/
+
+# Dependencies
+node_modules/
+
+# Vite production output
+dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
