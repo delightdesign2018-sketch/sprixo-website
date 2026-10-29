@@ -343,3 +343,70 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 @media (forced-colors: active) {
   .brand-logo { filter: none; mix-blend-mode: normal; }
 }
+
+/* Two equal, non-shrinking groups: -50% of the track is exactly one group.
+   Keep copies identical; the half-gaps at each end add up to a full seam gap. */
+.services-marquee {
+  --marquee-duration: 38s;
+  --marquee-gap: 40px;
+  width: 100%;
+  min-height: 72px;
+  margin-top: 35px;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  font: 400 15px/1.6 Manrope, Arial, sans-serif;
+}
+
+.services-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: sprixoServicesMarquee var(--marquee-duration) linear infinite;
+}
+
+.services-marquee__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  width: max-content;
+  min-width: 100vw;
+  gap: var(--marquee-gap);
+  padding-inline: calc(var(--marquee-gap) / 2);
+  white-space: nowrap;
+}
+
+.services-marquee__group > span:not(.services-marquee__star) {
+  letter-spacing: .08em;
+}
+
+.services-marquee__star {
+  color: var(--lime);
+  font-size: 23px;
+}
+
+@keyframes sprixoServicesMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 650px) {
+  .services-marquee { --marquee-gap: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-marquee__track { width: 100%; animation: none; }
+  .services-marquee__group {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 22px;
+    padding-inline: var(--gutter);
+  }
+  .services-marquee__group[aria-hidden="true"],
+  .services-marquee__star { display: none; }
+}
