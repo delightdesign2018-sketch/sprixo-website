@@ -211,7 +211,6 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 }
 @media (hover: hover) and (pointer: fine) {
   .main-nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
-  .nav-cta:hover { background: var(--lime); color: #20211e; }
   .hero-artwork:hover .artwork-front { transform: rotate(-6deg) translateY(-12px); }
   .hero-artwork:hover .artwork-back { transform: rotate(8deg) translateY(-10px); }
   .explore-link:hover .explore-circle { background: var(--lime); transform: translateY(3px); }
@@ -491,10 +490,9 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 }
 .work .all-projects:active { transform: scale(.97); }
 .work .project:focus-visible .project-image img { filter: grayscale(0); }
-.work .all-projects:focus-visible { background: var(--lime); }
+/* .work .all-projects .sprixo-fill-btn__content { gap: inherit; } */
 @media (hover: hover) and (pointer: fine) {
   .work .project:hover .project-image img { filter: grayscale(0); }
-  .work .all-projects:hover { background: var(--lime); }
 }
 @media (max-width: 900px) {
   .work .section-heading { align-items: start; }
@@ -730,7 +728,6 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 }
 @media (hover: hover) and (pointer: fine) {
   .footer-nav a:hover, .footer-secondary a:hover { color: var(--lime); text-decoration: underline; text-underline-offset: 6px; }
-  .footer-cta:hover { background: var(--lime); color: var(--ink); border-color: var(--lime); }
 }
 @media (max-width: 900px) {
   .footer-bottom { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -745,4 +742,47 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .footer-cta { transition: none; }
+}
+
+.sprixo-fill-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.sprixo-fill-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--lime);
+  z-index: 0;
+  pointer-events: none;
+  transition: width .4s ease-in-out;
+}
+.sprixo-fill-btn__content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.sprixo-fill-btn:is(:hover, :focus-visible) { color: var(--ink); }
+.sprixo-fill-btn:is(:hover, :focus-visible)::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+/* .sprixo-fill-btn:is(:hover, :focus-visible) .sprixo-fill-btn__content {
+  animation: sprixo-cta-scale .3s ease-in-out;
+} */
+@keyframes sprixo-cta-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(.95); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sprixo-fill-btn::after { transition: none; }
+  .sprixo-fill-btn:is(:hover, :focus-visible) .sprixo-fill-btn__content { animation: none; }
 }
