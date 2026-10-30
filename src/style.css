@@ -582,3 +582,71 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .studio .studio-copy p { font-size: 17px; }
   .studio .studio-copy .muted { font-size: 16px; }
 }
+
+/* Expertise uses independent native disclosure controls. */
+.expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10%;
+  max-width: 1800px;
+  margin: auto;
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  background: var(--paper);
+  color: var(--ink);
+}
+.expertise > div { min-width: 0; }
+.expertise .eyebrow { margin-bottom: 25px; }
+.expertise h2 {
+  margin: 0;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: clamp(38px, 4.7vw, 72px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+.expertise h2 em { font-style: normal; color: var(--muted); }
+.expertise details { border-bottom: 1px solid var(--border); }
+.expertise summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 75px;
+  padding: 20px 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: clamp(17px, 1.6vw, 23px);
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+.expertise summary::-webkit-details-marker { display: none; }
+.expertise summary:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+.expertise summary span {
+  flex: 0 0 auto;
+  font-size: 23px;
+  line-height: 1;
+  transition: transform 220ms var(--ease);
+}
+.expertise details[open] summary span { transform: rotate(45deg); }
+.expertise details p {
+  padding: 0 40px 25px 0;
+  color: var(--muted);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .expertise details[open] p { animation: expertise-reveal 220ms var(--ease); }
+}
+@keyframes expertise-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 900px) {
+  .expertise { gap: 7%; }
+}
+@media (max-width: 650px) {
+  .expertise { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expertise summary span { transition: none; }
+}
