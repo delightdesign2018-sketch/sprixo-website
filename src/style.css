@@ -792,9 +792,14 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   color: var(--ink);
   font: 15px/1.6 Arial, Helvetica, sans-serif;
 }
-.work-index button:focus-visible, .work-index input:focus-visible {
+.work-index button:focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 5px;
+}
+
+.work-index input:focus-visible {
+  outline: 2px solid var(--muted);
+  outline-offset: 0;
 }
 .work-index .results-count { margin: 25px 0; color: var(--muted); font-size: 13px; }
 .work-index [hidden] { display: none !important; }
