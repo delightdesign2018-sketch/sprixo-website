@@ -1,0 +1,95 @@
+.case-page .site-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+  width: 100%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: #fff;
+}
+.case-page .site-header .brand-logo { mix-blend-mode: normal; }
+.case-page .nav-cta { border-color: #ffffff80; }
+.case-page .site-header a:focus-visible { outline-color: var(--lime); }
+.case-scroll-scene { position: relative; height: calc(max(100svh, 620px) + 28svh); }
+.case-hero {
+  position: sticky;
+  top: 0;
+  height: max(100svh, 620px);
+  overflow: hidden;
+  background: #181a17;
+  color: #fff;
+}
+.case-hero-cover {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 round 0);
+  transform: scale(1);
+  transition: clip-path 620ms var(--ease), transform 620ms var(--ease);
+}
+.case-hero-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.case-hero.is-condensed .case-hero-cover {
+  clip-path: inset(var(--case-inset-y, 8%) var(--case-inset-x, 15%) round 12px);
+  transform: scale(.92);
+}
+.case-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #11130f55, transparent 25%, transparent 48%, #11130f22 62%, #11130fdb);
+}
+.case-hero-caption {
+  position: absolute;
+  left: max(var(--gutter), calc((100% - 1800px) / 2 + var(--gutter)));
+  bottom: clamp(38px, 7vh, 82px);
+  z-index: 2;
+  width: min(1050px, calc(100% - var(--gutter) * 2));
+}
+.case-page .back-work { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 20px; }
+.case-kicker { margin-bottom: 14px; }
+.case-page h1, .case-page .case-copy h2, .case-navigation strong {
+  font-family: Manrope, Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+.case-hero h1 { font-size: clamp(56px, 9vw, 124px); line-height: .98; overflow-wrap: anywhere; }
+.case-subtitle { max-width: 680px; margin-top: 16px; font-size: clamp(15px, 1.5vw, 19px); }
+.case-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.case-meta span { padding: 6px 12px; border: 1px solid #ffffff6b; border-radius: 20px; font-size: 12px; }
+.case-hero a:focus-visible { outline-color: var(--lime); }
+.case-section { max-width: 1800px; margin: auto; padding: clamp(60px, 7vw, 110px) var(--gutter); }
+.case-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8%; }
+.case-page .source-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 15px; }
+.case-copy { max-width: 780px; min-width: 0; overflow-wrap: anywhere; }
+.case-copy h2 { margin: 0 0 28px; font-size: clamp(32px, 3.5vw, 46px); line-height: 1.08; }
+.case-copy p { margin-bottom: 20px; font-size: 18px; line-height: 1.8; }
+.case-copy blockquote { margin: 0 0 24px; font-size: clamp(22px, 3vw, 34px); line-height: 1.5; letter-spacing: -.025em; }
+.case-copy .muted { color: var(--muted); font-size: 14px; }
+.case-page .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.case-gallery { padding-top: 0; padding-bottom: 0; }
+.case-gallery figure { margin: 0 0 35px; overflow: hidden; border-radius: 8px; }
+.case-gallery img { width: 100%; height: auto; }
+.case-navigation { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; border-top: 1px solid var(--border); }
+.case-navigation a { display: flex; flex-direction: column; gap: 15px; min-width: 0; }
+.case-navigation a:last-child { text-align: right; }
+.case-navigation span { color: var(--muted); font-size: 13px; }
+.case-navigation strong { font-size: clamp(22px, 3vw, 42px); line-height: 1.2; overflow-wrap: anywhere; }
+@media (hover: hover) and (pointer: fine) {
+  .case-navigation a:hover strong, .case-page .source-link:hover, .case-page .back-work:hover { text-decoration: underline; text-underline-offset: 6px; }
+}
+@media (max-width: 650px) {
+  .case-page .main-nav { background: var(--ink); }
+  .case-page .menu-toggle { color: #fff; }
+  .case-page .menu-toggle:focus-visible { outline-color: var(--lime); }
+  .case-hero-caption { bottom: 35px; }
+  .case-page .back-work { margin-bottom: 12px; }
+  .case-hero h1 { font-size: clamp(48px, 12vw, 78px); }
+  .case-subtitle { font-size: 16px; }
+  .case-overview { grid-template-columns: 1fr; gap: 35px; }
+  .case-copy p { font-size: 17px; }
+  .case-navigation { gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-hero-cover { transition: none; }
+}

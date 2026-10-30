@@ -744,6 +744,72 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .footer-cta { transition: none; }
 }
 
+.work-index { padding-top: 45px; }
+.work-index > .eyebrow { margin-bottom: 30px; }
+.work-index h1 {
+  margin: 0;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: clamp(55px, 8vw, 115px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+.work-index h1 em { font-style: normal; color: var(--muted); }
+.work-index .index-intro { max-width: 350px; }
+.work-index .portfolio-tools {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+.work-index .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.work-index .filters button, .work-index #reset-search {
+  min-height: 44px;
+  padding: 9px 17px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: transparent;
+  color: var(--ink);
+  font: 14px/1.6 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.work-index .filters button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.work-index .search-label { display: block; width: 290px; max-width: 100%; font-size: 13px; }
+.work-index .search-label span { display: block; margin-bottom: 6px; }
+.work-index input {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.6 Arial, Helvetica, sans-serif;
+}
+.work-index button:focus-visible, .work-index input:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 5px;
+}
+.work-index .results-count { margin: 25px 0; color: var(--muted); font-size: 13px; }
+.work-index [hidden] { display: none !important; }
+.work-index .empty-state { padding: 50px 0; }
+.work-index .empty-state h2 { font-size: 32px; }
+.work-index .empty-state p { margin: 20px 0; }
+@media (max-width: 900px) {
+  .work-index .portfolio-tools { align-items: start; flex-direction: column; }
+  .work-index .search-label { width: 100%; }
+}
+@media (max-width: 650px) {
+  .work-index h1 { font-size: clamp(48px, 12vw, 78px); }
+  .work-index .filters button { padding: 9px 13px; font-size: 13px; }
+}
+
 .sprixo-fill-btn {
   position: relative;
   overflow: hidden;
