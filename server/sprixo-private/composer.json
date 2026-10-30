@@ -1,0 +1,13 @@
+{
+  "name": "sprixo/careers-mailer",
+  "description": "Private SMTP dependencies for Sprixo careers applications",
+  "require": {
+    "php": "^8.1",
+    "ext-openssl": "*",
+    "phpmailer/phpmailer": "^6.9"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": false
+  }
+}

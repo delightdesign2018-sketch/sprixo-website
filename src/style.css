@@ -884,7 +884,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .services-page .intro-copy { font-size: 18px; }
 }
 @media (max-width: 700px) {
-  .services-page .service-panel { grid-template-columns: 1fr; gap: 26px; padding: 48px 0; }
+  .services-page .service-panel { grid-template-columns: 1fr; gap: 30px; padding: 48px 0; }
   .services-page .service-panel > .eyebrow,
   .services-page .service-panel:nth-of-type(even) .service-copy,
   .services-page .service-panel:nth-of-type(even) .service-visual { grid-column: 1; grid-row: auto; }

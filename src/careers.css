@@ -1,0 +1,70 @@
+.careers-page .section {
+  max-width: 1800px;
+  margin: auto;
+  padding: clamp(60px, 7vw, 110px) var(--gutter);
+}
+.careers-page .page-intro { padding-top: 45px; padding-bottom: 45px; }
+.careers-page h1, .careers-page aside h2 {
+  font-family: Manrope, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+.careers-page h1 { margin: 25px 0; font-size: clamp(55px, 8vw, 115px); }
+.careers-page h1 em { font-style: normal; color: var(--muted); }
+.careers-page .muted, .careers-page small { color: var(--muted); }
+.careers-page .intro-copy { max-width: 650px; font-size: 20px; }
+.careers-page .form-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 10%; padding-top: 35px; }
+.careers-page aside h2 { margin: 0; font-size: clamp(32px, 3.5vw, 50px); }
+.careers-page aside p { margin: 25px 0; }
+.careers-page .enquiry-form { display: grid; min-width: 0; gap: 22px; }
+.careers-page .enquiry-form label { display: grid; gap: 8px; min-width: 0; font-size: 15px; font-weight: 600; }
+.careers-page .enquiry-form input:not([type="checkbox"]),
+.careers-page .enquiry-form select, .careers-page .enquiry-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: none;
+  font: 16px/1.4 Arial, Helvetica, sans-serif;
+}
+.careers-page textarea { resize: vertical; }
+.careers-page .enquiry-form small { font-weight: 400; }
+.careers-page .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.careers-page .enquiry-form .consent { display: flex; align-items: start; gap: 12px; font-size: 14px; font-weight: 400; }
+.careers-page .consent input { width: 20px; height: 20px; margin: 4px 0 0; flex-shrink: 0; accent-color: var(--ink); }
+.careers-page .consent a { text-decoration: underline; }
+.careers-page .enquiry-form :is(input, select, textarea):focus { outline: none; box-shadow: none; }
+.careers-page .enquiry-form :is(input:not([type="checkbox"]), select, textarea):focus-visible { border-color: var(--muted); }
+.careers-page .enquiry-form input[type="checkbox"]:focus-visible { outline: 1px solid var(--muted); outline-offset: 2px; }
+.careers-page .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.careers-page .careers-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  min-height: 48px;
+  padding: 14px 24px;
+  border: 1px solid var(--ink);
+  border-radius: 32px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 14px/1.6 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.careers-page .careers-submit:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+.careers-page .careers-submit:is(:hover, :focus-visible) { color: var(--ink); }
+.careers-page .careers-submit:disabled { opacity: .6; cursor: wait; }
+.careers-page .form-status { font-size: 15px; overflow-wrap: anywhere; }
+.careers-page .form-status[data-state="error"] { color: #a12917; }
+.careers-page .form-status[data-state="success"] { padding: 18px; background: #edeee7; border-radius: 8px; }
+@media (max-width: 750px) {
+  .careers-page h1 { font-size: clamp(44px, 10vw, 70px); }
+  .careers-page .intro-copy { font-size: 18px; }
+  .careers-page .form-layout { grid-template-columns: 1fr; gap: 35px; padding-top: 15px; }
+  .careers-page .field-grid { grid-template-columns: 1fr; }
+}

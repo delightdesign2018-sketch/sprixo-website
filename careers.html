@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7f2">
+  <link rel="icon" type="image/svg+xml" href="/assets/sprixo-icon.svg">
+  <link rel="stylesheet" href="/preloader.css">
+  <title>Careers - Sprixo</title>
+</head>
+<body class="careers-page">
+  <script src="/preloader.js"></script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="/index.html" aria-label="Sprixo Home">
+      <span class="brand-logo">
+        <img src="/assets/sprixo-logo.png"
+             alt="Sprixo" width="2248" height="822">
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Open navigation"
+            aria-expanded="false" aria-controls="main-navigation">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+      <a href="/work.html">Work</a>
+      <a href="/services.html">Services</a>
+      <a href="/index.html#studio">Studio</a>
+      <a href="/careers.html" aria-current="page">Careers</a>
+      <a class="nav-cta sprixo-fill-btn" href="/quote.html"><span class="sprixo-fill-btn__content">Get a quote</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section page-intro" aria-labelledby="careers-heading"><p class="eyebrow">CAREERS AT SPRIXO</p><h1 id="careers-heading">Good people.<br><em>Better together.</em></h1><p class="intro-copy muted">We welcome introductions from designers, creative thinkers and client-focused people. Tell us where you’d like to contribute.</p></section>
+    <section class="section form-layout"><aside><h2>Bring your<br>point of view.</h2><p>Choose your area of interest and share your work. This is an open application, not a promise of an available vacancy.</p><p class="muted">Our team is based in Rajkot, Gujarat. We’ll review your application and contact you if there’s a suitable opportunity.</p></aside><form class="enquiry-form" id="careers-form" action="/api/careers.php" method="post" aria-describedby="careers-status"><div class="field-grid">
+        <label>Your name *<input name="name" autocomplete="name" maxlength="120" required minlength="2"></label>
+        <label>Email address *<input name="email" type="email" autocomplete="email" maxlength="254" required></label></div>
+        <label>Phone number <span class="muted">(optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+        <label>Role / area of interest *<select name="service" required><option value="">Choose an option</option><option>Logo Design</option><option>Branding</option><option>Print media</option><option>Advertisement Designs</option><option>Website Design</option><option>Creative Direction</option><option>Client Relationship Executive</option><option>Other</option></select></label>
+        <label>Portfolio or CV link *<input name="portfolio" type="url" placeholder="https://" maxlength="1000" required><small>Share a link we can open. You don’t need to upload a file.</small></label>
+        <label>Tell us about your experience *<textarea name="message" rows="5" minlength="10" maxlength="4000" required></textarea></label><div class="form-trap" aria-hidden="true">
+        <label>Company website<input name="companyWebsite" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input name="consent" type="checkbox" required><span>I agree that Sprixo may use these details to respond to my application. <a href="privacy.html">Privacy notice</a> *</span></label><button class="careers-submit sprixo-fill-btn" type="submit"><span class="sprixo-fill-btn__content">Send application</span></button><p class="form-status" id="careers-status" role="status" aria-live="polite" aria-atomic="true"></p></form></section></main>
+
+  <footer class="footer" aria-labelledby="footer-heading">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <p class="footer-label">LET'S CREATE SOMETHING MEANINGFUL <span aria-hidden="true">✳</span></p>
+        <h2 id="footer-heading">Great brands start with a different kind of thinking.</h2>
+        <div class="footer-actions">
+          <a class="footer-cta sprixo-fill-btn" href="quote.html"><span class="sprixo-fill-btn__content">Start a project <span aria-hidden="true">↗</span></span></a>
+          <a class="footer-cta sprixo-fill-btn" href="work.html"><span class="sprixo-fill-btn__content">Explore our work <span aria-hidden="true">↗</span></span></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-identity">
+          <a class="footer-logo" href="index.html" aria-label="Sprixo home">
+            <img src="assets/sprixo-logo-white.png" width="2248" height="822" alt="Sprixo" loading="lazy">
+          </a>
+          <p>Branding &amp; Graphic Design Studio</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="footer-meta">
+          <p>Rajkot, India</p>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2026 Sprixo Studio</p>
+        <nav class="footer-secondary" aria-label="Additional footer links">
+          <a href="privacy.html">Privacy</a>
+          <a href="careers.html">Careers</a>
+          <a href="consultation.html">Book a consultation</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/careers.js"></script>
+</body>
+</html>

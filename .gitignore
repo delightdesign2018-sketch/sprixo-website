@@ -19,5 +19,10 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Private careers SMTP configuration and deployment dependencies
+server/sprixo-private/config.php
+server/sprixo-private/vendor/
+dist-private/
+
 # Editor files
 .vscode/
