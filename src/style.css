@@ -818,7 +818,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 .services-page .section {
   max-width: 1800px;
   margin: auto;
-  padding: clamp(60px, 7vw, 110px) var(--gutter);
+  padding: clamp(60px, 7vw, 110px) var(--gutter) 30px;
 }
 .services-page .page-intro { padding-top: 45px; padding-bottom: 45px; }
 .services-page h1, .services-page .service-copy h2 {
@@ -831,7 +831,8 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 .services-page h1 em { font-style: normal; color: var(--muted); }
 .services-page .intro-copy { max-width: 650px; font-size: 20px; }
 .services-page .muted { color: var(--muted); }
-.services-page .service-pages { padding-top: 15px; }
+.services-page .service-pages { padding-top: 15px; padding-bottom: clamp(0px, 4vw, 56px); }
+.services-page .service-panel:last-child { padding-bottom: 0; }
 .services-page .service-panel {
   display: grid;
   grid-template-columns: minmax(105px, .42fr) minmax(0, 1.25fr) minmax(0, 1.05fr);
