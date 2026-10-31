@@ -3,4 +3,7 @@
 // Never place the real password in this example or commit config.php.
 return [
     'smtp_password' => 'REPLACE_WITH_WORK_MAILBOX_PASSWORD',
+    'quote_recipient' => 'REPLACE_WITH_QUOTE_RECIPIENT_EMAIL',
+    'smtp_username' => 'work@sprixo.com',
+    'smtp_from' => 'work@sprixo.com',
 ];
