@@ -9,10 +9,44 @@
   <link rel="stylesheet" href="/src/careers.css">
   <title>Privacy Policy - Sprixo</title>
   <style>
-    .privacy-page .privacy-copy { margin-inline: auto; line-height: 1.75; }
-    .privacy-page .privacy-copy h2 { margin: 1.5em 0 .5em; font: 500 clamp(26px, 3vw, 36px)/1.2 Manrope, Arial, sans-serif; letter-spacing: -.04em; }
-    .privacy-page .privacy-copy p + p { margin-top: 1em; }
+    /* Privacy page introduction */
+    .privacy-page .page-intro {
+      padding-bottom: 20px;
+    }
+
+    /* Reduce spacing before policy content */
+    .privacy-page article.section {
+      padding-top: 15px;
+    }
+
+    /* Privacy policy content */
+    .privacy-page .privacy-copy {
+      margin-inline: auto;
+      line-height: 1.75;
+    }
+
+    .privacy-page .privacy-copy h2 {
+      margin: 1.5em 0 .5em;
+      font: 500 clamp(26px, 3vw, 36px)/1.2 Manrope, Arial, sans-serif;
+      letter-spacing: -.04em;
+    }
+
+    .privacy-page .privacy-copy p + p {
+      margin-top: 1em;
+    }
+
+    /* Mobile */
+    @media (max-width: 750px) {
+      .privacy-page .page-intro {
+        padding-bottom: 15px;
+      }
+
+      .privacy-page article.section {
+        padding-top: 10px;
+      }
+    }
   </style>
+
 </head>
 <body class="careers-page privacy-page">
   <script src="/preloader.js"></script>
