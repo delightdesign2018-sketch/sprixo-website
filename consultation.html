@@ -38,6 +38,37 @@
         border: none !important;
         box-shadow: none !important;
     }
+
+    
+    /* Reduce spacing above Cal.com calendar */
+    .consultation-page .consultation-copy-block p:last-child {
+        margin-bottom: 0;
+    }
+
+    .consultation-page .cal-embed-shell {
+        margin-top: 0;
+        padding-top: 0;
+        align-self: start;
+    }
+
+    /* Tablet and mobile */
+    @media (max-width: 1440px) {
+        .consultation-page .consultation-layout {
+            row-gap: 20px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 750px) {
+        .consultation-page .consultation-layout {
+            row-gap: 12px;
+        }
+
+        .consultation-page .consultation-copy-block p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
   </style>
 </head>
 <body class="careers-page consultation-page">
