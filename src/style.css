@@ -765,7 +765,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   border-top: 1px solid var(--border);
 }
 .work-index .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.work-index .filters button, .work-index #reset-search {
+.work-index .filters button, .work-index #reset-search, .work-index #load-more {
   min-height: 44px;
   padding: 9px 17px;
   border: 1px solid var(--border);
@@ -802,6 +802,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   outline-offset: 0;
 }
 .work-index .results-count { margin: 25px 0; color: var(--muted); font-size: 13px; }
+.work-index #load-more { display: block; margin: 40px auto 0; }
 .work-index [hidden] { display: none !important; }
 .work-index .empty-state { padding: 50px 0; }
 .work-index .empty-state h2 { font-size: 32px; }

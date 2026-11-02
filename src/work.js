@@ -6,36 +6,50 @@ const filters = [...portfolio.querySelectorAll('[data-filter]')];
 const cards = [...portfolio.querySelectorAll('.project')];
 const count = portfolio.querySelector('.results-count');
 const empty = portfolio.querySelector('.empty-state');
+const loadMore = portfolio.querySelector('#load-more');
+const pageSize = 12;
+let visibleLimit = pageSize;
 let category = 'all';
 
 const update = () => {
   const query = search.value.trim().toLowerCase();
-  let visible = 0;
+  let matching = 0;
 
   cards.forEach((card) => {
     const matchesCategory = category === 'all' || card.dataset.category === category;
     const searchable = `${card.dataset.search} ${card.dataset.category}`.toLowerCase();
-    card.hidden = !(matchesCategory && searchable.includes(query));
-    if (!card.hidden) visible += 1;
+    const matches = matchesCategory && searchable.includes(query);
+    if (matches) matching += 1;
+    card.hidden = !matches || matching > visibleLimit;
   });
 
   filters.forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.filter === category));
   });
-  count.textContent = `${visible} of ${cards.length} ${visible === 1 ? 'project' : 'projects'}`;
-  empty.hidden = visible !== 0;
+  count.textContent = `${matching} of ${cards.length} ${matching === 1 ? 'project' : 'projects'}`;
+  empty.hidden = matching !== 0;
+  loadMore.hidden = matching <= visibleLimit;
 };
 
 filters.forEach((button) => {
   button.addEventListener('click', () => {
     category = button.dataset.filter;
+    visibleLimit = pageSize;
     update();
   });
 });
-search.addEventListener('input', update);
+search.addEventListener('input', () => {
+  visibleLimit = pageSize;
+  update();
+});
+loadMore.addEventListener('click', () => {
+  visibleLimit += pageSize;
+  update();
+});
 portfolio.querySelector('#reset-search').addEventListener('click', () => {
   category = 'all';
   search.value = '';
+  visibleLimit = pageSize;
   update();
   search.focus();
 });
