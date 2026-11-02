@@ -19,6 +19,7 @@ module.exports = {
         services: resolve(__dirname, 'services.html'),
         careers: resolve(__dirname, 'careers.html'),
         quote: resolve(__dirname, 'quote.html'),
+        consultation: resolve(__dirname, 'consultation.html'),
         project: resolve(__dirname, 'project.html'),
       },
     },
