@@ -964,3 +964,39 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .whatsapp-chat { transition: none; }
   .whatsapp-chat:hover { transform: none; }
 }
+
+/* Mobile: Remove tap highlight, hover colors and animations */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Remove blue tap highlight on mobile browsers */
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Disable button/link animations */
+  a,
+  button,
+  .sprixo-fill-btn,
+  .sprixo-whatsapp {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Prevent mobile hover color changes */
+  a:hover,
+  button:hover {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Disable hover movement on interactive elements */
+  .sprixo-fill-btn:hover,
+  .sprixo-whatsapp:hover {
+    transform: none !important;
+  }
+}
