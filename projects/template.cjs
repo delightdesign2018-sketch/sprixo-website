@@ -24,7 +24,7 @@ function renderProject(template, project, projects) {
       <section class="case-hero" aria-labelledby="project-heading">
         <div class="case-hero-cover"><img src="${escape(project.cover.src)}" alt="${escape(project.cover.alt)}" fetchpriority="high"></div>
         <div class="case-hero-caption">
-          <a class="back-work" href="/work.html">← All projects</a>
+          <a class="back-work" href="/work">← All projects</a>
           <p class="eyebrow case-kicker">${escape(project.category)} / ${escape(project.industry)}</p>
           <h1 id="project-heading">${escape(project.name)}</h1>
           <p class="case-subtitle">${escape(project.subtitle)}</p>
@@ -38,8 +38,8 @@ function renderProject(template, project, projects) {
     </section>
     ${project.galleryHtml ? `<section class="case-section case-gallery" aria-label="Project artwork">${project.galleryHtml}</section>` : ''}
     <nav class="case-section case-navigation" aria-label="Project navigation">
-      <a href="/projects/${escape(previous.slug)}.html" rel="prev"><span>← Previous project</span><strong>${escape(previous.name)}</strong></a>
-      <a href="/projects/${escape(next.slug)}.html" rel="next"><span>Next project →</span><strong>${escape(next.name)}</strong></a>
+      <a href="/projects/${escape(previous.slug)}" rel="prev"><span>← Previous project</span><strong>${escape(previous.name)}</strong></a>
+      <a href="/projects/${escape(next.slug)}" rel="next"><span>Next project →</span><strong>${escape(next.name)}</strong></a>
     </nav>
   </main>`;
   return template.replace('{{PROJECT_TITLE}}', escape(project.seoTitle))

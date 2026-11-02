@@ -19,7 +19,7 @@ module.exports = function projectPages() {
     configureServer(server) {
       server.middlewares.use(async (request, response, next) => {
         const pathname = new URL(request.url, 'http://localhost').pathname;
-        const project = projects.find((item) => pathname === `/projects/${item.slug}.html`);
+        const project = projects.find((item) => [`/projects/${item.slug}`, `/projects/${item.slug}.html`].includes(pathname));
         if (!project) return next();
         try {
           const template = layout(fs.readFileSync(path.join(root, 'project.html'), 'utf8'));

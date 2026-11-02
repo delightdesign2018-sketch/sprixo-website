@@ -1,0 +1,25 @@
+Options -MultiViews
+DirectoryIndex index.html
+RewriteEngine On
+
+# Leave PHP endpoints and static assets untouched.
+RewriteRule ^(?:api|assets)(?:/|$) - [L]
+
+# Redirect explicit legacy requests, never internal HTML rewrites.
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+[^?\s]+\.html[?\s] [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Canonicalize page slashes without changing real directory URLs.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Serve existing HTML files at extensionless URLs. Query strings are retained.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
