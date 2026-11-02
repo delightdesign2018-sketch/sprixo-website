@@ -11,4 +11,6 @@
   font-size: 14px;
 }
 .quote-page .service-cta:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
-.quote-page .service-cta:hover { background: var(--lime); }
+@media (hover: hover), (pointer: fine) {
+  .quote-page .service-cta:hover { background: var(--lime); }
+}

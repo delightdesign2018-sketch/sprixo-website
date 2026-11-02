@@ -919,11 +919,15 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   justify-content: center;
   gap: 10px;
 }
-.sprixo-fill-btn:is(:hover, :focus-visible) { color: var(--ink); }
-.sprixo-fill-btn:is(:hover, :focus-visible)::after {
+.sprixo-fill-btn:focus-visible { color: var(--ink); }
+.sprixo-fill-btn:focus-visible::after {
   right: auto;
   left: 0;
   width: 100%;
+}
+@media (hover: hover), (pointer: fine) {
+  .sprixo-fill-btn:hover { color: var(--ink); }
+  .sprixo-fill-btn:hover::after { right: auto; left: 0; width: 100%; }
 }
 /* .sprixo-fill-btn:is(:hover, :focus-visible) .sprixo-fill-btn__content {
   animation: sprixo-cta-scale .3s ease-in-out;
@@ -979,24 +983,11 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Disable button/link animations */
-  a,
-  button,
-  .sprixo-fill-btn,
-  .sprixo-whatsapp {
-    transition: none !important;
-    animation: none !important;
-  }
-
-  /* Prevent mobile hover color changes */
-  a:hover,
-  button:hover {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* Disable hover movement on interactive elements */
-  .sprixo-fill-btn:hover,
-  .sprixo-whatsapp:hover {
-    transform: none !important;
+  /* Limit hover suppression to buttons; retain active and keyboard-focus states. */
+  :is(button, [role="button"], .sprixo-fill-btn, .service-cta, .whatsapp-chat, .explore-link):hover:not(:active):not(:focus-visible),
+  .sprixo-fill-btn:hover:not(:active):not(:focus-visible)::after,
+  .sprixo-fill-btn:hover:not(:active):not(:focus-visible) .sprixo-fill-btn__content {
+    transition: none;
+    animation: none;
   }
 }

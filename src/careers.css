@@ -57,7 +57,10 @@
   cursor: pointer;
 }
 .careers-page .careers-submit:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
-.careers-page .careers-submit:is(:hover, :focus-visible) { color: var(--ink); }
+.careers-page .careers-submit:focus-visible { color: var(--ink); }
+@media (hover: hover), (pointer: fine) {
+  .careers-page .careers-submit:hover { color: var(--ink); }
+}
 .careers-page .careers-submit:disabled { opacity: .6; cursor: wait; }
 .careers-page .form-status { font-size: 15px; overflow-wrap: anywhere; }
 .careers-page .form-status[data-state="error"] { color: #a12917; }
