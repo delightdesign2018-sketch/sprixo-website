@@ -10,7 +10,7 @@
   <title>Consultation - Sprixo</title>
   <style>
     /* Consultation introduction */
-    .consultation-page .consultation-intro {
+    .consultation-page .page-intro.consultation-intro {
       min-width: 0;
       padding: 0;
     }
@@ -26,7 +26,7 @@
     }
 
     /* Main consultation layout */
-    .consultation-page .consultation-layout {
+    .consultation-page .section.consultation-layout {
       display: grid;
       grid-template-columns: minmax(0, 7fr) minmax(0, 12fr);
       align-items: start;
@@ -88,7 +88,7 @@
 
     /* Laptop and tablet */
     @media (max-width: 1440px) {
-      .consultation-page .consultation-layout {
+      .consultation-page .section.consultation-layout {
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
       }
@@ -96,7 +96,7 @@
 
     /* Mobile */
     @media (max-width: 750px) {
-      .consultation-page .consultation-layout {
+      .consultation-page .section.consultation-layout {
         row-gap: 12px;
         padding-top: 35px;
         padding-bottom: 35px;
