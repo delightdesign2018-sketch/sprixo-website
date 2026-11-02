@@ -936,3 +936,31 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .sprixo-fill-btn::after { transition: none; }
   .sprixo-fill-btn:is(:hover, :focus-visible) .sprixo-fill-btn__content { animation: none; }
 }
+
+.whatsapp-chat {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 16%);
+  transition: transform 180ms ease;
+}
+.whatsapp-chat svg { width: 56%; height: 56%; }
+.whatsapp-chat:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+  .whatsapp-chat:hover { transform: translateY(-2px); }
+}
+@media (max-width: 650px) {
+  .whatsapp-chat { width: 50px; height: 50px; right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-chat { transition: none; }
+  .whatsapp-chat:hover { transform: none; }
+}
