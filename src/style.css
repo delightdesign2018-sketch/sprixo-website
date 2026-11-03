@@ -23,6 +23,16 @@ a { color: inherit; text-decoration: none; touch-action: manipulation; }
 img { display: block; max-width: 100%; height: auto; }
 h1, p { margin: 0; }
 a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+
+.contact-page .contact-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
 ::selection { background: var(--lime); color: #20211e; }
 .skip-link {
   position: fixed;
@@ -739,6 +749,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   .footer-nav { grid-column: auto; grid-row: auto; justify-content: flex-start; }
   .footer-meta { grid-column: auto; padding-top: 0; }
   .footer-copyright { flex-direction: column; align-items: start; }
+  .work-index #load-more { font: 18px/1.6 Arial, Helvetica, sans-serif !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .footer-cta { transition: none; }
@@ -772,7 +783,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   border-radius: 24px;
   background: transparent;
   color: var(--ink);
-  font: 14px/1.6 Arial, Helvetica, sans-serif;
+  font: 18px/1.6 Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 .work-index .filters button[aria-pressed="true"] {
@@ -802,7 +813,11 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
   outline-offset: 0;
 }
 .work-index .results-count { margin: 25px 0; color: var(--muted); font-size: 13px; }
-.work-index #load-more { display: block; margin: 40px auto 0; }
+.work-index #load-more { display: block; margin: 40px auto 0; background: #D2F85A; color: #20211E; }
+@media (hover: hover) and (pointer: fine) {
+  .work-index #load-more { transition: background-color 250ms ease, color 250ms ease; }
+  .work-index #load-more:hover { background: #20211E; color: #D2F85A; }
+}
 .work-index [hidden] { display: none !important; }
 .work-index .empty-state { padding: 50px 0; }
 .work-index .empty-state h2 { font-size: 32px; }

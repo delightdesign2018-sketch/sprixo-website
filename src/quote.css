@@ -11,6 +11,9 @@
   font-size: 14px;
 }
 .quote-page .service-cta:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
-@media (hover: hover), (pointer: fine) {
-  .quote-page .service-cta:hover { background: var(--lime); }
+.quote-page .service-cta .sprixo-fill-btn__content { gap: inherit; }
+@media (hover: none), (pointer: coarse) {
+  .quote-page .service-cta.sprixo-fill-btn:hover { color: inherit; }
+  .quote-page .service-cta.sprixo-fill-btn::after { display: none; transition: none; }
+  .quote-page .service-cta .sprixo-fill-btn__content { animation: none; }
 }
