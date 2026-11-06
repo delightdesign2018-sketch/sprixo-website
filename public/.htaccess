@@ -1,5 +1,13 @@
 Options -MultiViews
 DirectoryIndex index.html
+
+# Revalidate page HTML so deployments pick up Vite's new hashed CSS/JS URLs.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 RewriteEngine On
 
 # Leave PHP endpoints and static assets untouched.

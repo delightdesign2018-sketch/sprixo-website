@@ -178,8 +178,8 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .tiny-star[aria-hidden="true"]:hover,
-  .hero-star[aria-hidden="true"]:hover { animation-duration: 3s; }
+  .tiny-star[aria-hidden="true"]:hover { animation-duration: 3s; }
+  .hero-star[aria-hidden="true"]:hover { animation-play-state: paused; }
 }
 
 .hero-bottom {
@@ -711,6 +711,7 @@ a:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
 .footer-logo { display: block; width: 170px; max-width: 100%; }
 .footer-logo img { width: 100%; height: auto; }
 .footer-identity p { margin-top: 12px; }
+.footer-identity p + p { margin-top: 8px; }
 .footer-identity p, .footer-meta { color: var(--footer-muted); font-size: 13px; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 24px; grid-column: 3; grid-row: 1; }
 .footer-nav a, .footer-secondary a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
